@@ -1,20 +1,12 @@
-/* ╔══════════════════════════════════════════════════════════╗
-   ║  PITHANI MOHITH SAI SATYA — PORTFOLIO                   ║
-   ║  Pure HTML + CSS · Zero JavaScript                      ║
-   ╚══════════════════════════════════════════════════════════╝ */
-
-/* ══════════════════════════════════════
-   DESIGN SYSTEM — ROOT VARIABLES
-══════════════════════════════════════ */
-:root {
-  /* ── Background layers ── */
+﻿:root {
+  /* Background layers */
   --bg-base:     #070b14;
   --bg-surface:  #0d1320;
   --bg-elevated: #131b2e;
   --bg-card:     rgba(13, 19, 32, 0.88);
   --bg-glass:    rgba(255, 255, 255, 0.025);
 
-  /* ── Accent system ── */
+  /* Accent system */
   --indigo:       #6366f1;
   --indigo-light: #818cf8;
   --indigo-dim:   rgba(99, 102, 241, 0.14);
@@ -23,32 +15,32 @@
   --cyan-dim:     rgba(34, 211, 238, 0.1);
   --purple:       #a855f7;
 
-  /* ── Codeforces Specialist blue ── */
+  /* Codeforces Specialist blue */
   --cf-blue:  #1F8BDB;
   --cf-glow:  rgba(31, 139, 219, 0.3);
   --cf-dim:   rgba(31, 139, 219, 0.1);
 
-  /* ── Text scale ── */
+  /* Text scale */
   --t1: #f0f4ff;
   --t2: #c1cde8;
   --t3: #8898b8;
   --t4: #4f5f7c;
 
-  /* ── Status colours ── */
+  /* Status colours */
   --green:  #4ade80;
   --red:    #ff5f57;
   --yellow: #febc2e;
 
-  /* ── Gradient definitions ── */
+  /* Gradient definitions */
   --grad:       linear-gradient(135deg, var(--indigo), var(--cyan));
   --grad-hero:  linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #22d3ee 100%);
   --grad-text:  linear-gradient(135deg, var(--indigo-light), var(--cyan));
 
-  /* ── Borders ── */
+  /* Borders */
   --border:      rgba(255, 255, 255, 0.055);
   --border-glow: rgba(99, 102, 241, 0.22);
 
-  /* ── Border-radius ── */
+  /* Border-radius */
   --r-xs:   4px;
   --r-sm:   8px;
   --r-md:   12px;
@@ -56,25 +48,22 @@
   --r-xl:   24px;
   --r-full: 9999px;
 
-  /* ── Transitions ── */
+  /* Transitions */
   --t-fast:   0.12s ease;
   --t-base:   0.22s ease;
   --t-slow:   0.4s ease;
   --t-spring: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  /* ── Typography ── */
+  /* Typography */
   --font-head: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-  /* ── Layout ── */
+  /* Layout */
   --max-w: 1200px;
   --nav-h: 68px;
 }
 
-/* ══════════════════════════════════════
-   RESET & BASE
-══════════════════════════════════════ */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -108,9 +97,6 @@ code        { font-family: var(--font-mono); }
 /* Hide the mobile nav checkbox input */
 .nav-toggle-input { display: none; }
 
-/* ══════════════════════════════════════
-   PREMIUM TOP GRADIENT STRIPE
-══════════════════════════════════════ */
 body::before {
   content: '';
   position: fixed;
@@ -123,9 +109,6 @@ body::before {
   pointer-events: none;
 }
 
-/* ══════════════════════════════════════
-   CUSTOM SCROLLBAR
-══════════════════════════════════════ */
 ::-webkit-scrollbar       { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--bg-base); }
 ::-webkit-scrollbar-thumb {
@@ -134,17 +117,11 @@ body::before {
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--indigo); }
 
-/* ══════════════════════════════════════
-   SELECTION HIGHLIGHT
-══════════════════════════════════════ */
 ::selection {
   background: var(--indigo-glow);
   color: var(--t1);
 }
 
-/* ══════════════════════════════════════
-   HEADER & NAVBAR
-══════════════════════════════════════ */
 .header {
   position: sticky;
   top: 0;
@@ -166,8 +143,6 @@ body::before {
   padding: 0 32px;
   height: 100%;
 }
-
-/* Logo */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -203,8 +178,6 @@ body::before {
   color: var(--t1);
   letter-spacing: -0.3px;
 }
-
-/* Desktop nav links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -237,8 +210,6 @@ body::before {
 
 .nav-link:hover { color: var(--t1); background: var(--bg-glass); }
 .nav-link:hover::after { transform: translateX(-50%) scaleX(1); }
-
-/* Hamburger button */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -261,8 +232,6 @@ body::before {
               opacity var(--t-slow),
               background var(--t-base);
 }
-
-/* Mobile drawer */
 .mobile-drawer {
   position: fixed;
   top: var(--nav-h);
@@ -291,10 +260,7 @@ body::before {
 }
 .drawer-link:hover { color: var(--t1); background: var(--bg-glass); }
 
-/* ── CSS-only mobile nav toggle ──
-   #nav-toggle is BEFORE .header and .mobile-drawer in DOM.
-   :checked ~ sibling selects subsequent siblings.
-*/
+/* CSS-only mobile nav toggle */
 .nav-toggle-input:checked ~ .header .ham-bar:nth-child(1) {
   transform: rotate(45deg) translate(4px, 5px);
   background: var(--indigo);
@@ -311,9 +277,6 @@ body::before {
   transform: translateY(0);
 }
 
-/* ══════════════════════════════════════
-   SECTION SHARED STYLES
-══════════════════════════════════════ */
 .sec {
   padding: 96px 20px;
   position: relative;
@@ -385,9 +348,6 @@ body::before {
   margin-bottom: 1.25rem;
 }
 
-/* ══════════════════════════════════════
-   HERO SECTION
-══════════════════════════════════════ */
 .hero {
   position: relative;
   min-height: calc(100vh - var(--nav-h));
@@ -396,8 +356,6 @@ body::before {
   overflow: hidden;
   padding: 72px 20px 80px;
 }
-
-/* ── Animated ambient blobs ── */
 .hero-blobs {
   position: absolute;
   inset: 0;
@@ -446,8 +404,6 @@ body::before {
   33%       { transform: translate(28px, -38px)  scale(1.04); }
   66%       { transform: translate(-18px, 22px)  scale(0.96); }
 }
-
-/* ── Grid dot overlay ── */
 .hero-grid-bg {
   position: absolute;
   inset: 0;
@@ -459,8 +415,6 @@ body::before {
   -webkit-mask-image: radial-gradient(ellipse 80% 85% at 50% 50%, black 20%, transparent 100%);
   pointer-events: none;
 }
-
-/* ── Hero grid layout ── */
 .hero-inner {
   position: relative;
   z-index: 1;
@@ -472,8 +426,6 @@ body::before {
   gap: 56px;
   align-items: center;
 }
-
-/* ── Badges row ── */
 .hero-badges {
   display: flex;
   flex-wrap: wrap;
@@ -522,8 +474,6 @@ body::before {
   0%, 100% { opacity: 1; transform: scale(1); }
   50%       { opacity: 0.45; transform: scale(0.65); }
 }
-
-/* ── Hero name ── */
 .hero-name {
   font-family: var(--font-head);
   font-size: clamp(2.8rem, 6vw, 4.6rem);
@@ -554,10 +504,7 @@ body::before {
   50%       { background-position: 100% 50%; }
 }
 
-/* ── CSS-only role rotator ──
-   4 spans with staggered animation-delay.
-   Each span is visible for ~3.5s in a 16s cycle.
-*/
+/* CSS-only role rotator */
 .role-track {
   height: 30px;
   overflow: hidden;
@@ -593,8 +540,6 @@ body::before {
   7%,  21%  { opacity: 1; transform: translateY(0); }
   26%, 100% { opacity: 0; transform: translateY(-13px); }
 }
-
-/* ── Hero bio ── */
 .hero-bio {
   font-size: 0.95rem;
   line-height: 1.75;
@@ -602,8 +547,6 @@ body::before {
   max-width: 510px;
   margin-bottom: 30px;
 }
-
-/* ── Stats row ── */
 .hero-stats {
   display: flex;
   align-items: center;
@@ -642,8 +585,6 @@ body::before {
   align-self: center;
   margin-top: -8px;
 }
-
-/* ── CTA buttons ── */
 .hero-ctas {
   display: flex;
   gap: 10px;
@@ -699,8 +640,6 @@ body::before {
   border-color: rgba(31,139,219,0.28);
   transform: translateY(-2px);
 }
-
-/* ── Terminal widget (hero + contact) ── */
 .hero-terminal,
 .contact-term {
   border-radius: var(--r-lg);
@@ -784,17 +723,12 @@ body::before {
   50%       { opacity: 0; }
 }
 
-/* ══════════════════════════════════════
-   ABOUT SECTION
-══════════════════════════════════════ */
 .about-grid {
   display: grid;
   grid-template-columns: 260px 1fr;
   gap: 56px;
   align-items: start;
 }
-
-/* ── Aside: avatar + info ── */
 .about-aside {
   display: flex;
   flex-direction: column;
@@ -915,8 +849,6 @@ body::before {
 }
 .slink--cf:hover { color: var(--cf-blue); border-color: rgba(31,139,219,0.28); }
 .slink--li:hover { color: #0077b5; border-color: rgba(0, 119, 181, 0.28); }
-
-/* ── About main text ── */
 .about-para {
   font-size: 0.93rem;
   line-height: 1.8;
@@ -933,8 +865,6 @@ body::before {
   padding: 1px 6px;
   color: #a5b4fc;
 }
-
-/* ── Education timeline ── */
 .edu-block    { margin-top: 2.5rem; }
 .edu-list     { display: flex; flex-direction: column; }
 
@@ -1013,9 +943,6 @@ body::before {
   color: #a5b4fc;
 }
 
-/* ══════════════════════════════════════
-   SKILLS SECTION
-══════════════════════════════════════ */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1053,8 +980,6 @@ body::before {
 .skcat-icon {
   color: var(--indigo);
 }
-
-/* ── Skill bars ── */
 .skill-bars { display: flex; flex-direction: column; gap: 13px; }
 
 .skbar {
@@ -1114,8 +1039,6 @@ body::before {
   color: var(--t4);
   text-align: right;
 }
-
-/* ── Tool tags ── */
 .tool-tags {
   display: flex;
   flex-wrap: wrap;
@@ -1141,17 +1064,12 @@ body::before {
   transform: translateY(-1px);
 }
 
-/* ══════════════════════════════════════
-   COMPETITIVE PROGRAMMING SECTION
-══════════════════════════════════════ */
 .cp-layout {
   display: grid;
   grid-template-columns: 268px 1fr 1fr;
   gap: 28px;
   align-items: start;
 }
-
-/* ── CF Rating hero card ── */
 .cp-hero-card {
   background: linear-gradient(
     150deg,
@@ -1205,8 +1123,6 @@ body::before {
   position: relative;
 }
 .cf-handle-link:hover { opacity: 1; }
-
-/* ── Rating ring ── */
 .cp-ring-wrap { margin: 6px 0; }
 
 .cp-ring {
@@ -1252,8 +1168,6 @@ body::before {
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
-
-/* ── Specialist badge ── */
 .specialist-badge {
   display: flex;
   align-items: center;
@@ -1284,7 +1198,7 @@ body::before {
   color: var(--cf-blue);
 }
 
-/* ── CP stat cards 2×3 ── */
+/* CP stat cards 2×3 */
 .cp-stats {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -1332,8 +1246,6 @@ body::before {
   text-transform: uppercase;
   letter-spacing: 0.07em;
 }
-
-/* ── Focus tags + CF link ── */
 .cp-focus {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -1386,15 +1298,7 @@ body::before {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(31,139,219,0.18);
 }
-
-/* ══════════════════════════════════════
-   PROJECTS — CSS-ONLY FILTER + 3D FLIP CARDS
-══════════════════════════════════════ */
-
-/* ── Hide the radio inputs ── */
 .pf-radio { display: none; }
-
-/* ── Filter tab bar ── */
 .pf-tabs {
   display: inline-flex;
   gap: 3px;
@@ -1431,8 +1335,6 @@ body::before {
   color: #fff;
   box-shadow: 0 2px 12px rgba(99,102,241,0.32);
 }
-
-/* ── Project card grid ── */
 .proj-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1454,8 +1356,6 @@ body::before {
 
 #pf-web:checked ~ .proj-grid .pcard { display: none; }
 #pf-web:checked ~ .proj-grid .pcard[data-cat~="web"] { display: block; }
-
-/* ── 3D flip card ── */
 .pcard {
   perspective: 1100px;
   height: 310px;
@@ -1643,17 +1543,12 @@ body::before {
   box-shadow: 0 6px 18px rgba(99,102,241,0.4);
 }
 
-/* ══════════════════════════════════════
-   ACHIEVEMENTS SECTION
-══════════════════════════════════════ */
 .ach-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 44px;
   align-items: start;
 }
-
-/* ── Academic achievement list ── */
 .ach-list {
   display: flex;
   flex-direction: column;
@@ -1709,8 +1604,6 @@ body::before {
   font-size: 0.73rem;
   color: var(--t4);
 }
-
-/* ── Certifications ── */
 .cert-col { display: flex; flex-direction: column; }
 
 .cert-card {
@@ -1753,8 +1646,6 @@ body::before {
   color: var(--t3);
   line-height: 1.55;
 }
-
-/* ── Extra-curricular ── */
 .extra-list {
   display: flex;
   flex-direction: column;
@@ -1781,9 +1672,6 @@ body::before {
   line-height: 1.5;
 }
 
-/* ══════════════════════════════════════
-   CONTACT SECTION
-══════════════════════════════════════ */
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1859,9 +1747,6 @@ body::before {
   color: var(--t1);
 }
 
-/* ══════════════════════════════════════
-   COURSEWORK SECTION
-══════════════════════════════════════ */
 .cw-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1965,9 +1850,6 @@ body::before {
   .cw-grid { grid-template-columns: 1fr; }
 }
 
-/* ══════════════════════════════════════
-   PLATFORM TAGS (About bio inline pills)
-══════════════════════════════════════ */
 .platform-tag {
   display: inline-block;
   padding: 1px 7px;
@@ -1982,9 +1864,6 @@ body::before {
   white-space: nowrap;
 }
 
-/* ══════════════════════════════════════
-   CP PLATFORM BADGES
-══════════════════════════════════════ */
 .cp-platforms {
   display: flex;
   flex-wrap: wrap;
@@ -2049,9 +1928,6 @@ body::before {
 }
 .cpf--cses:hover { background: rgba(34,211,238,0.14); }
 
-/* ══════════════════════════════════════
-   FOOTER
-══════════════════════════════════════ */
 .footer {
   border-top: 1px solid var(--border);
   background: var(--bg-surface);
@@ -2093,9 +1969,6 @@ body::before {
   border-color: var(--border-glow);
 }
 
-/* ══════════════════════════════════════
-   RESPONSIVE — TABLET (≤ 1024px)
-══════════════════════════════════════ */
 @media (max-width: 1024px) {
   .hero-inner {
     grid-template-columns: 1fr;
@@ -2116,9 +1989,6 @@ body::before {
   }
 }
 
-/* ══════════════════════════════════════
-   RESPONSIVE — MOBILE (≤ 768px)
-══════════════════════════════════════ */
 @media (max-width: 768px) {
   :root { --nav-h: 60px; }
 
@@ -2129,13 +1999,9 @@ body::before {
   .hamburger  { display: flex; }
 
   .navbar { padding: 0 20px; }
-
-  /* Hero */
   .hero { padding: 56px 16px 64px; }
 
   .hero-name { font-size: clamp(2.2rem, 9vw, 3.2rem); }
-
-  /* About */
   .about-grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -2150,17 +2016,11 @@ body::before {
   .avatar-face { width: 68px; height: 68px; font-size: 1.55rem; }
   .ar1 { inset: -5px; }
   .ar2 { inset: -13px; }
-
-  /* Skills */
   .skills-grid { grid-template-columns: 1fr; }
   .skbar { grid-template-columns: 100px 1fr 32px; }
-
-  /* CP */
   .cp-layout { grid-template-columns: 1fr; }
   .cp-hero-card { grid-column: auto; }
   .cp-stats { grid-template-columns: 1fr 1fr 1fr; }
-
-  /* Projects */
   .proj-grid { grid-template-columns: 1fr; }
   .pcard { height: 290px; }
 
@@ -2171,21 +2031,12 @@ body::before {
     overflow-x: auto;
   }
   .pf-tab { flex: 1; text-align: center; font-size: 0.77rem; padding: 7px 10px; }
-
-  /* Achievements */
   .ach-layout { grid-template-columns: 1fr; gap: 30px; }
-
-  /* Contact */
   .contact-layout { grid-template-columns: 1fr; }
-
-  /* Footer */
   .footer-inner { flex-direction: column; align-items: center; text-align: center; gap: 10px; }
   .footer-center { order: -1; }
 }
 
-/* ══════════════════════════════════════
-   RESPONSIVE — SMALL MOBILE (≤ 480px)
-══════════════════════════════════════ */
 @media (max-width: 480px) {
   .hero-name { font-size: 2.1rem; }
   .role { font-size: 0.9rem; }
@@ -2208,9 +2059,6 @@ body::before {
   .skbar  { grid-template-columns: 90px 1fr 28px; }
 }
 
-/* ══════════════════════════════════════
-   REDUCED MOTION ACCESSIBILITY
-══════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -2219,3 +2067,5 @@ body::before {
   }
   .skbar-fill { width: var(--w); }
 }
+
+
